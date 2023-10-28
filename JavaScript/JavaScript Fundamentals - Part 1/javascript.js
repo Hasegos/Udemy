@@ -150,14 +150,17 @@
 */
 
 // 코딩 챌린지
- // 어떻게 만들든 결과가 같다면 큰문제가 안됨.
- // No.1
-
- // const massMark =  78;
- // const heghitMark = 1.69;
- // const massJohn =  92; 
- // const heghitJohn = 1.95;
-
+/*
+   어떻게 만들든 결과가 같다면 큰문제가 안됨.
+     No.1 challenge
+	 
+  	#case : 1
+  const massMark =  78;
+ const heghitMark = 1.69;
+ const massJohn =  92; 
+ const heghitJohn = 1.95;
+ 
+    #case : 2
  const massMark =  95;
  const heghitMark = 1.88;
  const massJohn =  85; 
@@ -170,3 +173,4 @@
 
  let markHigherBMI = BMIMark > BMIJohn;
  console.log(BMIMark,BMIJohn, markHigherBMI);
+*/
