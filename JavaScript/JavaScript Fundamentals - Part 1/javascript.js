@@ -1,6 +1,5 @@
 
-// 구름ide자체에선 콘솔창이 안열여서 새로운 창을 열고 콘솔창에 실행시켜 공부함.
-
+// 콘솔창에서 한 내용
 /*    Hello Wordl! 
 > alert("hello World")
 <- undefined
@@ -16,8 +15,11 @@
 <- 61
 */
 
-let massMarks = 78, heightMark = 169, massJohn = 92, heightJohn = 195;
-let MBI = mass 
+// 코딩 연습
+
+let js = 'amazing';
+if(js === 'amazing')
+ alert('JavaScript is Fun!');
 
 
 
