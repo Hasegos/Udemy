@@ -478,6 +478,9 @@
 
 	console.log(`I'm like to drink ${age >= 18 ? 'wine' : 'water'}`);
   */
+	
+	
+	
 }
 
 // 코딩 챌린지
@@ -567,6 +570,7 @@
 
 
   // NO.4 Challenge(식 과 문) 
+  /*	
 	let tip = 0;
 	const bill = 275;
 	
@@ -582,6 +586,6 @@
 	// 또다른 방법 (삼항 연산자 사용시)
 	const tip = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;	
 	console.log(`The bill was ${bill}, the tip was ${tip}, and the total value ${bill + tip}.`);
-	
+  */
 	
 }
