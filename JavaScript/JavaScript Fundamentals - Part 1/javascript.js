@@ -16,7 +16,7 @@
 */
 
  // 코딩 연습
-
+{
   // #섹션 2번 : 8 ~ 9번 (값과 변수 개념)
   /*
 	 데이터 조각 : 값 -> 변수에 저장후 사용 가능(재사용 또한)
@@ -156,8 +156,8 @@
 	 console.log(ageJonas, ageSarah, averageAge)
   */
 
- //  #섹션 2 : 17번 (문자열 구성)
- /*	
+  //  #섹션 2 : 17번 (문자열 구성)
+  /*	
 	   템플릿 문자열 -> EXSi에서 많이 사용하는 기능
 	   template literal 사용으로 간편하게 작성가능
 	   `` 백스틱 이용해서 하는데 큰따옴표, 작은 따옴표 사용 불가능
@@ -181,10 +181,10 @@
 	 console.log(`String
 	 multiple
 	 lines`)
- */
+  */
 
- // #섹션 2 : 18번 (if & else 구성과 작동원리)
-/*
+  // #섹션 2 : 18번 (if & else 구성과 작동원리)
+  /*
 	const age = 15; 
 
 	 if(age >= 18){
@@ -211,10 +211,10 @@
 		  century = 21;
 	 }
 	 console.log(century);
-*/
+  */
 
- // #섹션 2 : 20 ~ 21번  (형식 변환 과 형식 강압)
-/*  
+  // #섹션 2 : 20 ~ 21번  (형식 변환 과 형식 강압)
+  /*  
 
 
 	   type conversion (형식 변환)
@@ -274,10 +274,10 @@
 	else {
 	 console.log('Height is undefined')
 	}
-*/
+  */
 
- // #섹션 2 : 22번 (== vs === / if ,else if ,else)
-/*
+  // #섹션 2 : 22번 (== vs === / if ,else if ,else)
+  /*
 	  === : 강압 형식 적용 x  , ==  : 강압 형식 적용 o
 	  형식 변환을 사용하더라도 삼중 등호를 써라. 
 	  코드의 오류가 떴을 때 찾기가 더쉽다.
@@ -309,10 +309,10 @@
 	
 	 if(favorite !== 23) console.log('Why not 23?');
 	 
-*/ 
+  */ 
 
- // #섹션 2 : 23번 (논리 연산자)
-/*
+  // #섹션 2 : 23번 (논리 연산자)
+  /*
     and  vs or vs not 
 	
 	and의 경우(&&) : 모두가 참일때 즉, 어떤것이든 몇개든 모두가 참일 때만 참 (그 예외로는 거짓)
@@ -348,10 +348,10 @@
 	else{
 	 console.log('Someone else should drive....');
  	} 
-*/
+  */
 
- // #섹션 2 : 26번 (switch)
-/*
+  // #섹션 2 : 26번 (switch)
+  /*
 	default : 모든 조건들이 충족이 안됐을 때 마지막 기본 값
 	break : 조건에 따라  실행을 하고 그다음 조건문에 있는 실행을 안시키기 위해 끄기
 	단, 만약 break 안걸면 뒤에 조건 상관없이 실행함.break 걸려있는 곳까지
@@ -424,16 +424,69 @@
 	else{
 	 console.log('Not a valid day!');
 	}
-*/
+  */
+
+  // #섹션 2 : 27번 (식 과 문)
+  /*
+	식(선언) : 값(가치)을/를 만들어내는 코드 단위
+	문(표현) : 무엇가를 수행하는 코드 단위
+	문은 식을 기대하는데 문에다가 문을 넣을순 없다 
+	아래 예제 처럼) ${조건문} 이런형태는 말이안된다.
+	표현 vs 선언 차이
+	선언이라는건 식이고 표현이라는건 문이다.
+	
+	const me = 'Jonas' < 선언
+	
+	if(23 > 10){    < 표현
+		
+	}
+	가치 = 선언 , 가치를 어떻게 사용하냐 = 표현
+	
+	3 + 4
+	1991
+	true && false && !false
+	if(23 > 10){
+	 const str = '23 is bigger';
+	}
+
+	const me = 'Jonas';
+	console.log(`I'm ${2037 - 1991} years old ${if(조건){내용}}`)
+	console.log(`I'm ${2037 - 1991} years old ${me}`);
+  */  
+
+  // #섹션 2 : 28번 (삼항 연산자) ? 참 : 거짓
+  /*
+	그전에 오류났던 ${if(){}} 에서 if(){} 는 표현(수행하는 단위)이라 오류
+	지금 쓰는 ${age >= 18 ? 'wine' : 'water'} 는  식(가치 창출)이라 오류 x
 
 
+	const age = 23;
+	age >= 18 ? console.log('I like to dirnk wine') :  
+	console.log('I like to dirnk water');
+
+	const drink = age >= 18 ? 'wine' : 'water';
+	console.log(drink);
+
+	let drink2;
+	if(age >= 18){
+	 drink2 = 'wine';	 
+	}
+	else{
+	 drink2 = 'water';
+	}
+	console.log(drink2);
+
+	console.log(`I'm like to drink ${age >= 18 ? 'wine' : 'water'}`);
+  */
+}
 
 // 코딩 챌린지
-// 어떻게 만들든 결과가 같다면 큰문제가 안됨.
+{
+ // 어떻게 만들든 결과가 같다면 큰문제가 안됨.
 
 
- // NO.1 Challenge (간단한 연산과 비교)
-/*	 
+  // NO.1 Challenge (간단한 연산과 비교)
+  /*	 
 		#case : 1
 	  const massMark =  78;
 	 const heghitMark = 1.69;
@@ -453,11 +506,11 @@
 
 	 let markHigherBMI = BMIMark > BMIJohn;
 	 console.log(BMIMark,BMIJohn, markHigherBMI); 
-*/
+  */
 
 
- // NO.2 Challenge(`   `) template literal 통과~~~~
- /*
+  // NO.2 Challenge(`   `) template literal 통과~~~~
+  /*
 	 const massMark = 78;
 	 const heightMark = 1.69;
 	 const massJohn = 92;
@@ -472,11 +525,11 @@
 	 else{
 		 console.log(`Mark's BMI ${BMIJohn} is higher than John's ${BMIMark}!`);
 	 }
- */
+  */
 
 
- // NO.3 Challenge(if , else if , else) 통과~~~~
-/*
+  // NO.3 Challenge(if , else if , else) 통과~~~~
+  /*
  
  const scoreDolphins = (96 + 108 + 89) / 3;
  const scoreKoalas =  (88 + 91 + 110) / 3;
@@ -510,5 +563,25 @@
  else {
 	 console.log("No one wins the trophy");
  }
-*/ 
+  */ 
 
+
+  // NO.4 Challenge(식 과 문) 
+	let tip = 0;
+	const bill = 275;
+	
+	if(bill >= 50 && bill <= 300){
+		tip = bill * 0.15;
+		console.log(`The bill was ${bill}, the tip was ${tip}, and the total value ${bill + tip}.`);
+	}
+	else{
+		tip = bill * 0.2;
+		console.log(`The bill was ${bill}, the tip was ${tip}, and the total value ${bill + tip}.`);
+	}
+	
+	// 또다른 방법 (삼항 연산자 사용시)
+	const tip = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;	
+	console.log(`The bill was ${bill}, the tip was ${tip}, and the total value ${bill + tip}.`);
+	
+	
+}
