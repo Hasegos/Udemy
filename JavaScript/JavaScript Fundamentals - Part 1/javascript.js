@@ -311,13 +311,128 @@
 	 
 */ 
 
+ // #섹션 2 : 23번 (논리 연산자)
+/*
+    and  vs or vs not 
+	
+	and의 경우(&&) : 모두가 참일때 즉, 어떤것이든 몇개든 모두가 참일 때만 참 (그 예외로는 거짓)
+	
+	or의 경우(||) : 모두가 거짓일때 즉,어떤것이든 몇개든 모두가 거짓일 때만 거짓 (그 예외로는 참)
+	
+	not의 경우(!) : true 라는값을 false로, false라는 값을 true로 뒤집을 때 사용
+
+ 
+	 const hasDriversLicense = true; // A
+	 const hasGoodVision = true; // B
+
+	 console.log(hasDriversLicense && hasGoodVision);
+	 console.log(hasDriversLicense || hasGoodVision);
+	 console.log(!hasDriversLicense);
+
+
+
+	if(hasDriversLicense && hasGoodVision){
+	 console.log('Sarah is able to drive!');
+	}
+	else{
+	 console.log('Someone else should drive....');
+	}
+
+	const isTired = false; // C
+	console.log(hasDriversLicense && hasGoodVision && isTired);
+
+
+	if(hasDriversLicense && hasGoodVision && !isTired){
+	 console.log('Sarah is able to drive!');
+	}
+	else{
+	 console.log('Someone else should drive....');
+ 	} 
+*/
+
+ // #섹션 2 : 26번 (switch)
+/*
+	default : 모든 조건들이 충족이 안됐을 때 마지막 기본 값
+	break : 조건에 따라  실행을 하고 그다음 조건문에 있는 실행을 안시키기 위해 끄기
+	단, 만약 break 안걸면 뒤에 조건 상관없이 실행함.break 걸려있는 곳까지
+	가독성을 위해 switch 구문 사용하기도 함으로 if구문 뿐만아니라 switch구문이 있다는걸 알기
+	switch(조건) {
+		case 조건 : 
+		  실행 ...
+	    break;	  
+		  .
+		  . 반복
+		  .
+		  .
+		  
+		  
+		default : 
+		  실행
+	}
+ 
+	 const day = 'friday';
+	
+	
+    	switch 구문
+	
+	
+	switch(day){
+	 case 'monday': // day === 'monday'
+		console.log('Plan course structure');
+		console.log('Go to coding meetup');
+		break;
+	 case 'tuesday': 
+		console.log('Prepare theory videos');
+		break;
+	 case 'wednesday':
+	 case 'thursday': 
+		console.log('Write code examples');
+		 break;
+	 case 'friday':
+		console.log('Record videos');	 
+		break;
+	 case 'saturday':
+	 case 'sunday':
+		console.log('Enjoy the weekend :D');
+		break; 
+	 default : 
+		 console.log('Not a valid day!');
+	}
+
+
+
+
+	         if구문
+	
+	
+	if(day === 'monday'){
+	 console.log('Plan course structure');
+	 console.log('Go to coding meetup');
+	}
+	else if(day === 'tuesday'){
+	 console.log('Prepare theory videos');
+	}
+	else if(day === 'wednesday' || day === 'thursday'){
+	 console.log('Write code examples');
+	}
+	else if(day === 'friday'){
+	 console.log('Record videos');
+	}
+	else if(day === 'saturday' || day === 'sunday'){
+	 console.log('Enjoy the weekend :D');
+	}
+	else{
+	 console.log('Not a valid day!');
+	}
+*/
+
 
 
 // 코딩 챌린지
 // 어떻게 만들든 결과가 같다면 큰문제가 안됨.
 
 
- // No.1 challenge
+ // NO.1 Challenge (간단한 연산과 비교)
 /*	 
 		#case : 1
 	  const massMark =  78;
@@ -341,7 +456,7 @@
 */
 
 
- // No.2 challenge 통과~~~~
+ // NO.2 Challenge(`   `) template literal 통과~~~~
  /*
 	 const massMark = 78;
 	 const heightMark = 1.69;
@@ -358,3 +473,42 @@
 		 console.log(`Mark's BMI ${BMIJohn} is higher than John's ${BMIMark}!`);
 	 }
  */
+
+
+ // NO.3 Challenge(if , else if , else) 통과~~~~
+/*
+ 
+ const scoreDolphins = (96 + 108 + 89) / 3;
+ const scoreKoalas =  (88 + 91 + 110) / 3;
+
+ if(scoreKoalas > scoreDolphins){
+ console.log("Koalas win the trophy");
+ }
+ else if(scoreKoalas < scoreDolphins){
+ console.log("Dolphins win the trophy ");
+ }
+ else {
+ console.log("Both win the trophy");
+ }
+
+ // BONUS 1
+
+
+ const scoreDolphins = (97 + 112+ 80) / 3;
+ const scoreKoalas =  (109 + 95 + 50) / 3;
+ console.log(scoreKoalas,scoreDolphins);
+
+ if(scoreKoalas > scoreDolphins && scoreKoalas >= 100){
+	 console.log("Koalas win the trophy");
+ }
+ else if(scoreKoalas < scoreDolphins && scoreDolphins >= 100){
+	 console.log("Dolphins win the trophy ");
+ }
+ else if(scoreDolphins === scoreKoalas && scoreDolphins>= 100 && scoreKoalas >= 100){
+	 console.log("Both win the trophy");
+ }
+ else {
+	 console.log("No one wins the trophy");
+ }
+*/ 
+
