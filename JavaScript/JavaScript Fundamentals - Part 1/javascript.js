@@ -182,6 +182,7 @@
 	 multiple
 	 lines`)
  */
+
  // #섹션 2 : 18번 (if & else 구성과 작동원리)
 /*
 	const age = 15; 
@@ -212,6 +213,106 @@
 	 console.log(century);
 */
 
+ // #섹션 2 : 20 ~ 21번  (형식 변환 과 형식 강압)
+/*  
+
+
+	   type conversion (형식 변환)
+	   Number() : 숫자 형식으로 변환
+	   String() ; 문자 형식으로 변환
+	   Boolean() : 참과 거짓으로 변환
+
+	 const inputYear = '1991';
+	 console.log(Number(inputYear), inputYear);
+	 console.log(Number(inputYear) + 18);
+
+	 console.log(Number('Jonas'));
+	 console.log(typeof NaN);
+
+	  console.log(String(23), 23);
+	  
+	  
+
+	  type coercion (강압 형식)
+	  + 를 사용해 자동으로 타입에 맞게 끔 변환
+	  - 를 사용시 + 기능의 반대 형식을 촉발
+
+	 console.log('I am ' + 23 + ' years old');
+	 console.log('I am ' + '23' + ' years old');
+	 console.log('23' - '10'- 3);
+	 console.log('23' / '2');
+
+	 let n = '1' + 1; // '11'
+	 n = n - 1; 
+	 console.log(n);
+ 
+
+
+     5 falsy values : 0, '', undefined, null, NaN
+	 5개 거짓 값들
+
+
+	 console.log(Boolean(0));
+	 console.log(Boolean(undefined));
+	 console.log(Boolean('Jonas'));
+	 console.log(Boolean({}));
+	 console.log(Boolean(''));
+
+
+	let money = 100;
+	if(money){
+	 console.log("Don't spend it all :)");	 
+	}
+	else{
+	 console.log("You should get a job");	 
+	}
+
+	let height = 0;
+	if(height){
+	 console.log('YaY! Height is defined')
+	}
+	else {
+	 console.log('Height is undefined')
+	}
+*/
+
+ // #섹션 2 : 22번 (== vs === / if ,else if ,else)
+/*
+	  === : 강압 형식 적용 x  , ==  : 강압 형식 적용 o
+	  형식 변환을 사용하더라도 삼중 등호를 써라. 
+	  코드의 오류가 떴을 때 찾기가 더쉽다.
+	  아니라는것을 표현  : !== :엄격 버전  != : 느슨 버전 (엄격 버전을 사용해라.)
+	  
+	 const age = '18';
+	 if(age === 18) console.log('You just became an adult :D (strict)');
+
+	 if(age == 18) console.log('You just became an adult :D (lose)');
+
+	 const favorite = Number(prompt("What's your favoirote number?"));
+
+	 console.log(favorite);
+	 console.log(typeof favorite);
+
+
+	if(favorite === 23){ // 22 === 23 -> False
+	 console.log('Cool! 23 is an amazing number');
+	}
+	else if(favorite === 7){ 
+	 console.log('7 is also a cool number');
+	}
+	else if(favorite === 9){ 
+	 console.log('9 is also a cool number');
+	}
+	else{ 
+	 console.log('Number is not 23 or 7');
+	}
+	
+	 if(favorite !== 23) console.log('Why not 23?');
+	 
+*/ 
+
+
+
 // 코딩 챌린지
 // 어떻게 만들든 결과가 같다면 큰문제가 안됨.
 
@@ -241,18 +342,19 @@
 
 
  // No.2 challenge 통과~~~~
+ /*
+	 const massMark = 78;
+	 const heightMark = 1.69;
+	 const massJohn = 92;
+	 const heightJohn = 1.95;
 
- const massMark = 78;
- const heightMark = 1.69;
- const massJohn = 92;
- const heightJohn = 1.95;
+	 const BMIMark = massMark / (heightMark * heightMark);
+	 const BMIJohn = massJohn / (heightJohn * heightJohn);
 
- const BMIMark = massMark / (heightMark * heightMark);
- const BMIJohn = massJohn / (heightJohn * heightJohn);
- 
- if(BMIMark > BMIJohn){
-	 console.log(`Mark's BMI ${BMIMark} is higher than John's ${BMIJohn}!`);
- }
- else{
-	 console.log(`Mark's BMI ${BMIJohn} is higher than John's ${BMIMark}!`);
- }
+	 if(BMIMark > BMIJohn){
+		 console.log(`Mark's BMI ${BMIMark} is higher than John's ${BMIJohn}!`);
+	 }
+	 else{
+		 console.log(`Mark's BMI ${BMIJohn} is higher than John's ${BMIMark}!`);
+	 }
+ */
