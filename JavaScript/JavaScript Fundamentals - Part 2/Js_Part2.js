@@ -207,31 +207,128 @@
 	console.log(yearsUntilRetirement(1950,'Mike'));
    */
 
+   // #섹션 3 : 39번    Array(데이터 조각) 배열
+   /*
+
+	const : 가치만 불변할뿐이다.  그래서 배열안에 있는 내용을 바꿔도 문제가 없다.
+	배열은 원초적인 값이 아니다. 배열 전체를 건드릴순 없다
+
+	1. 함수 호출은 가치를 창출하기 때문에 배열안에 사용해도 무방하다.
+	2. 배열의 공간 시작은 항상 0이다.
+	3. 배열에 서로다른 타입이 사용 가능하다.
+	4. 배열에 특정 공간 지정없이 함수의 매개변수에 넣어버리면 문자열이 되어버린다.
+	5. 사용법 : 변수 =  [....] or 변수 = new Array(....)
+	
+	const friend1 = 'Michael';
+	const friend2 = 'Steven';
+	const friend3 = 'Peter';
+
+	const friends = ['Michael','Steven','Peter'];
+	console.log(friends);
+
+
+	const years = new Array(1991,1984,2008,2020);
+
+	console.log(friends[0]);
+	console.log(friends[2]);
+
+
+	console.log(friends.length);
+	console.log(friends[friends.length - 1]);
+
+	friends[2] = 'Jay';
+	console.log(friends);
+	friends = ['Bob','Alice'];
+
+	const firstName = 'Jonas';
+	const jonas =[firstName, 'Schmedtmann',2037 - 1991,'teacher',friends];
+	console.log(jonas);
+	console.log(jonas.length);
+
+
+
+	const  calcAge = function(birthYear){	 
+		 return 2037 - birthYear;
+	}
+
+	const years = [1990,1957,2002,2010,2018];
+
+	const age1 =  (calcAge(years[0]));
+	const age2 =  (calcAge(years[1]));
+	const age3 =  (calcAge(years[years.length - 1]));
+	console.log(age1, age2, age3);
+
+	const ages = [calcAge(years[0]),calcAge(years[1]),calcAge(years.length - 1)];
+	console.log(ages);
+   */
+
+   // #섹션 3 : 40번   push 함수 - 마지막 추가 / unshift 함수 - 앞에 추가 (요소 추가) 
+   //                 pop 함수 - 마지막 삭제   / 
+const friends = ['Michael','Steven','Peter'];
+
+const newLength = friends.push('Jay');
+
+console.log(friends);
+console.log(newLength); // 추가는 길이
+
+friends.unshift('John');
+console.log(friends);
+
+
+friends.pop();  // 삭제는 삭제된 요소 확인
+console.log(friends.pop());
+console.log(friends);
+
+
 
 
 
  // 코딩 챌린지
 
 
- // No.1 Challenge
-// 실수 한부분 : 예제 점수 제대로 안넣음 , 승리조건 충족 안봄
+ // No.1 Challenge (함수 사용)
 
- const calcAverage = (num1,num2,num3) => (num1 + num2 + num3) / 3;
- 
- const scoreDolphins = calcAverage(44,23,71);
- const scoreKoalas = calcAverage(65,54,49);
- 
- 	   
- function checkWinner(avgDolphins,avgKoalas ){	 
+/*
+   주어진 문제에서 실수 한 부분들 : 승리 조건 체크 x , 입력 인수값 체크 x
+
+	const calcAverage = (num1,num2,num3) => (num1 + num2 + num3) / 3;
+
+	let scoreDolphins = calcAverage(44,23,71);
+	let scoreKoalas = calcAverage(65,54,49);
+
+	//  방식 1 : 함수 선언으로 문제를 풀어내기
+	
+	function checkWinner_1(avgDolphins,avgKoalas ){	 
 	if(avgDolphins >= avgKoalas * 2){
-	  return console.log(`Dolphins win (${avgDolphins} vs. ${avgKoalas})`);
+	   return console.log(`Dolphins win (${avgDolphins} vs. ${avgKoalas})`);
+	 }
+	 else if(avgDolphins * 2 <= avgKoalas) {
+	   return console.log(`Koalas win (${avgKoalas} vs. ${avgDolphins})`);
+	 }
+	 else{
+	   return console.log(`No team wins...`);		
+	 }
 	}
-	else if(avgDolphins * 2 <= avgKoalas) {
-	  return console.log(`Koalas win (${avgKoalas} vs. ${avgDolphins})`);
+	checkWinner_1(scoreDolphins,scoreKoalas);
+
+	 // 방식 2 : 함수 식을 사용해서 문제를 풀어내기
+	    
+	const checkWinner_2 = function(avgDolphins,avgKoalas){
+	 if(avgDolphins >= avgKoalas * 2){
+	  console.log(`Dolphins win (${avgDolphins} vs. ${avgKoalas})`);	 
+	  }
+	else if(avgDolphins >= avgKoalas * 2){
+	 console.log(`Koalas win (${avgKoalas} vs. ${avgDolphins})`);	 
+	 }
+	 else {
+	 console.log(`No team wins...`);	
+	 }
 	}
-	else{
-      return console.log(`No team wins...`);		
-	}
- }
- checkWinner(scoreDolphins,scoreKoalas);
-	   
+
+	 checkWinner_2(scoreDolphins,scoreKoalas);
+
+
+	scoreDolphins = calcAverage(85,54,41);
+	scoreKoalas = calcAverage(23,34,27);  
+	checkWinner_2(scoreDolphins,scoreKoalas);
+*/	   
