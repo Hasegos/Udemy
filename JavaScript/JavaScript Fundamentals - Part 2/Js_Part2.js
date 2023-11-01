@@ -2,9 +2,10 @@
 // 사용시 1. 특정 작업 금지 2. 눈에 보이는 오류 만들기
 'use strict'; 
 
+ // 코딩 연습
 
- // #섹션 3번 : 32번  use strict (엄격 모드 사용)
-/*
+   // #섹션 3번 : 32번  use strict (엄격 모드 사용)
+   /*
 	 엄격모드 사용시 : 개발자가 의도치 않은 실수를 할수있는 환경을
 	 피할수있게 해준다.
 	 
@@ -21,11 +22,10 @@
 	 const interface = 'Audio';
 	 const private = 534;
 	 const if = 23;
-*/
+   */
 
-
- // #섹션 3번 : 33번 function() 함수
-/*
+   // #섹션 3번 : 33번 function() 함수
+   /*
 	함수를 사용하는 이유 : 같은 작업을 여러 곳에 반복할때, 함수를 만들어
 	필요할떄마다 사용하기 편하다.
 	추가로 1.가독성) 이름만 보고 어떤기능인지 알 수 있다 2. 모듈화) 유지보수나 버그 발생시 편함.
@@ -78,10 +78,10 @@
 
 	 console.log(appleOrangJuice);
 	 const num = Number('23');
-*/ 
+   */ 
 
- // #섹션 3 : 34번 function Declarations(함수 선언) vs function  Expressions(함수 식)
-/* 
+   // #섹션 3 : 34번 function Declarations(함수 선언) vs function  Expressions(함수 식)
+   /* 
 	        함수는 그저 값이다.
 
 	         선언식 vs 표현식 
@@ -114,10 +114,10 @@
 	}
 	const age2 = calcAge2(1991);
 	console.log(age1,age2);
-*/
+   */
 
- // #섹션 3 : 35번 Arrow Function(화살표 함수)
-/* 
+   // #섹션 3 : 35번 Arrow Function(화살표 함수)
+   /* 
 
          Arrow function  
               ↓
@@ -150,10 +150,10 @@
  console.log(yearsUntilRetirement(1991, 'Jonas'));
  console.log(yearsUntilRetirement(1980, 'Bob'));
  
-*/
+   */
 
-// #섹션 3 : 36번 함수(함수 호출)
-/*
+   // #섹션 3 : 36번 함수(함수 호출)
+   /*
 
     함수안에 여러 함수를 호출 할수있고, 빈번하게 일어난다.
     
@@ -170,4 +170,68 @@
 	 return juice;  
 	}
 	console.log(fruitProcessor(2,3));
-*/
+   */
+
+   // #섹션 3 : 37번 함수 내용 정리
+   /*
+    1. 함수를 쓰는 방법 (1. 함수 선언  2. 함수 식  3. 화살표 함수)
+	2. 매개변수 의미 -> 입력받은 값을 이름을 대체할 뿐
+	3. 매개변수에 따른 함수 호출 -> 매개변수 개수 / 타입에 맞는 함수를 호출
+	4. 함수 안에 함수를 호출 할수있다. ->  function 이름(매개변수){ function 이름(매개변수){}} 
+	   이유 : 기능을 따로만들어서 사용하기위해
+    5. return -> 사용시 그 함수를 값으로 반환 후 종료 or 그냥 종료
+
+
+	const calcAge = function (birthYear) {
+	 return 2037 - birthYear;
+	}
+
+	const yearsUntilRetirement = function (birthYear , firstName)  {
+	  const age = calcAge(birthYear);
+	  const retirement = 65 - age;	 
+
+	  if(retirement > 0){
+	  console.log(`${firstName} retires in ${retirement} years`);	 
+	  return retirement;
+	  }
+	  
+	  else{
+	  console.log(`${firstName} has already retired`);
+	  return -1;   
+	  } 
+	  
+	  
+	 return retirement;
+	}
+	console.log(yearsUntilRetirement(1991,'Jonas'));
+	console.log(yearsUntilRetirement(1950,'Mike'));
+   */
+
+
+
+
+ // 코딩 챌린지
+
+
+ // No.1 Challenge
+// 실수 한부분 : 예제 점수 제대로 안넣음 , 승리조건 충족 안봄
+
+ const calcAverage = (num1,num2,num3) => (num1 + num2 + num3) / 3;
+ 
+ const scoreDolphins = calcAverage(44,23,71);
+ const scoreKoalas = calcAverage(65,54,49);
+ 
+ 	   
+ function checkWinner(avgDolphins,avgKoalas ){	 
+	if(avgDolphins >= avgKoalas * 2){
+	  return console.log(`Dolphins win (${avgDolphins} vs. ${avgKoalas})`);
+	}
+	else if(avgDolphins * 2 <= avgKoalas) {
+	  return console.log(`Koalas win (${avgKoalas} vs. ${avgDolphins})`);
+	}
+	else{
+      return console.log(`No team wins...`);		
+	}
+ }
+ checkWinner(scoreDolphins,scoreKoalas);
+	   
