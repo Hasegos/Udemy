@@ -262,22 +262,66 @@
 	console.log(ages);
    */
 
-   // #섹션 3 : 40번   push 함수 - 마지막 추가 / unshift 함수 - 앞에 추가 (요소 추가) 
-   //                 pop 함수 - 마지막 삭제   / 
-const friends = ['Michael','Steven','Peter'];
+   // #섹션 3 : 40번   Array function(문자열 관련 함수)
+   /*
+        push 함수 - 마지막 추가 / unshift 함수 - 맨앞에 추가 (요소 추가) 
+        pop 함수 - 마지막 삭제   / shift 함수 - 맨앞 삭제
+        indexOf 함수 - 배열 요소 위치 찾기
+        includes 함수 - 포함하는지 / 안하는지 (참과 거짓)
 
-const newLength = friends.push('Jay');
+        friends.push(...)  추가를 하는 함수를 보열줄 땐 길이를 보여줌
+	    friends.pop(...)  지우는 함수를 보여줄 땐 지운 내용을 보여줌
 
-console.log(friends);
-console.log(newLength); // 추가는 길이
+   
+	const friends = ['Michael','Steven','Peter'];
 
-friends.unshift('John');
-console.log(friends);
+	const newLength = friends.push('Jay');
+
+	console.log(friends);
+	console.log(newLength);  추가는 길이
+
+	friends.unshift('John');
+	console.log(friends);
 
 
-friends.pop();  // 삭제는 삭제된 요소 확인
-console.log(friends.pop());
-console.log(friends);
+	friends.pop();  // 삭제는 삭제된 요소 확인
+	const popperd = friends.pop();
+	console.log(popperd);
+	console.log(friends);
+
+	friends.shift();
+	console.log(friends);
+
+
+	console.log(friends.indexOf('Steven'));
+	console.log(friends.indexOf('Bob'));
+
+	friends.push(23);
+	console.log(friends.includes('Steven'));
+	console.log(friends.includes('BOb'));
+	console.log(friends.includes(23));
+
+	if(friends.includes('Steven')){
+		console.log('You have a friend called Peter');
+	}
+
+   */
+
+   // #섹션 3 : 42번  객체 (key : value)
+// 키(key)과 값(value)으로 구성된 프로퍼티(property)들의 집합
+// property : 속성 (다른 값과 연결되어있을 때 사용)
+const jonas = {
+	fristName : 'Jonas',
+	lastName : 'Schmedtmann',
+	age : 2037 - 1991,
+	job : 'teacher',
+	friends : ['Michael','Peter', 'Steven']	
+};
+
+
+
+
+
 
 
 
@@ -331,4 +375,67 @@ console.log(friends);
 	scoreDolphins = calcAverage(85,54,41);
 	scoreKoalas = calcAverage(23,34,27);  
 	checkWinner_2(scoreDolphins,scoreKoalas);
-*/	   
+*/
+
+ // No.2 Challenge (배열 사용)
+
+/*
+
+	실수 했던 부분들 : bills 선언 조건, totals 변수 내용을 bills로 대체한 것.
+
+	let bills = [125,555,44];	
+	
+	
+	방법 1
+	const calcTip =function (bill){
+		return bill >= 50 && bill <= 300 ? bill *0.15 : bill * 0.2;	
+
+		or
+		
+		if(bill >= 50 && bill <=300){
+			return bill * 0.15;
+		}
+		else{
+			return bill * 0.2;
+		}
+	}
+	const tips = [calcTip(bills[0]),calcTip(bills[1]), calcTip(bills[2])];
+	const total = [bills[0] + tips[0],bills[1] + tips[1],bills[2] + tips[2]];
+
+
+
+	방법 2
+	function calcTip(bill){
+	
+	
+		return bill >=50 && bill <=300 ? bill * 0.15 : bill * 0.2;
+		or
+		
+		
+		if(bill >= 50 && bill <=300){
+			return bill * 0.15;
+		}
+		else{
+			return bill * 0.2;
+		}
+	}
+
+	const tips = [calcTip(bills[0]),calcTip(bills[0]),calcTip(bills[0])];
+    const total = [bills[0] + tips[0],bills[1] + tips[1],bills[2] + tips[2]];
+
+
+
+
+	방법 3
+	const calcTip = bill  => {bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2};
+
+	const tips = [calcTip(bills[0]),calcTip(bills[1]),calcTip(bills[2])];
+	const total = [bills[0] + tips[0],bills[1] + tips[1],bills[2] + tips[2]];
+
+	console.log(tips,bills);
+	console.log(total);
+	
+*/
+
+	
+	
