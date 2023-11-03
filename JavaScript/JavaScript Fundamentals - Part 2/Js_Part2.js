@@ -380,39 +380,74 @@
 
    */
 
-//  객체 속성에 함수를 사용할 수 있다. 다만, 식이아니라 표현으로 해야한다
-//  항상 객체 자체를 참조하는 걸 주로 하자 하드 코딩하지말고
-// 14분 59초
-const jonas = {
-	
-	fristName : 'Jonas',
-	lastName : 'Schmedtmann',
-	brithYear : 1991,
-	job : 'teacher',
-	friends : ['Michael','Peter', 'Steven'],	
-	hasDriversLicense: true,
-	
-	// calcAge: function(birthYear){
-	// 	return 2037 - birthYear;
-	// }
-	
-	// calcAge: function(){
-	// 	// console.log(this);
-	// 	return 2037 - this.brithYear;
-	// }
-	
-	calcAge: function(){
-		this.age = 2037 - this.brithYear;
-		return this.age;
-	}
-};
+   // #섹션 3 : 44번 Object in function(객체안에 함수 표현)
+   /*
+	 1. 객체 속성에 함수를 작성이 가능하다. 다만, 식(값)이아니라 표현으로 해야한다
+	 2. 항상 객체 자체를 참조하는 걸 주로 하자 하드 코딩하지말고
+	 3. 배열은 특별한 객체일뿐이다.
+	 4. 외부에서 객체의 키와 값을 넣을 수 있다. ex) jonas.age = 2037 - 1991; 
+	 5. this(self -reference) 키워드를 사용하자. (객체 내부에서 해당 객체 이름으로 설정하면 재설정할때 다 바꿔야함 유지/보수가 힘듦)
+	 6. 외부에서 객체의 해당 키 함수 사용이 가능하다.
+	 
+	 
+	 const jonas = {
 
-console.log(jonas.calcAge());
-// console.log(jonas['calcAge'](1991));
-console.log(jonas.age);
-console.log(jonas.age);
-console.log(jonas.age);
-console.log(jonas.age);
+	    fristName : 'Jonas',
+	    lastName : 'Schmedtmann',
+	    brithYear : 1991,
+	    job : 'teacher',
+	    friends : ['Michael','Peter', 'Steven'],	
+	    hasDriversLicense: true,
+
+	 calcAge: function(birthYear){
+	 	return 2037 - birthYear;
+	 }
+	 calcAge: function(){
+	 	console.log(this);
+	 	return 2037 - this.brithYear;
+	 }
+
+	 calcAge: function(){
+	 	this.age = 2037 - this.brithYear;
+	 	return this.age;
+	 	},
+	 getSummary: function() {
+	 	return `${jonas.fristName} is a ${this.calcAge()}-years old ${this.job},
+	 	and he has ${this.hasDriversLicense ? "a" : "no"} drive's license`;	
+	 	}
+	 };
+
+	 console.log(jonas.calcAge());
+	 console.log(jonas['calcAge'](1991));
+	 console.log(jonas.age);
+	 console.log(jonas.age);
+	 console.log(jonas.age);
+	 console.log(jonas.age);
+
+	       Challengege
+	 "Jonas is a 46-years old teacher, and he has a driver's a license"
+
+
+	 console.log(jonas.getSummary());
+   */
+
+// console.log(`Lifting weights repetition 1`);
+// console.log(`Lifting weights repetition 2`);
+// console.log(`Lifting weights repetition 3`);
+// console.log(`Lifting weights repetition 4`);
+// console.log(`Lifting weights repetition 5`);
+// console.log(`Lifting weights repetition 6`);
+// console.log(`Lifting weights repetition 7`);
+// console.log(`Lifting weights repetition 8`);
+// console.log(`Lifting weights repetition 9`);
+// console.log(`Lifting weights repetition 10`);
+
+// for loop keeps running while condtion is TRUE
+for(let rep = 5; rep <= 10; rep++){
+	console.log(`Lifting weights repetition ${rep}`);
+}
+
+
 
 
  // 코딩 챌린지
@@ -525,5 +560,37 @@ console.log(jonas.age);
 	
 */
 
-	
-	
+ // No.3 Challenge (객체 사용)
+ 
+/*
+    실수 한 부분 : ** 이거 편집기에서 사용 불가능인 조건
+	문제에서 제공안한 부분 : bmi라는 속성값을 만드는거
+	const mark = {
+		fullName : 'Mark Miller',
+		mass : 78,
+		height : 1.69,	
+		calcBMI : function(){
+			this.bmi =  this.mass / (this.height * this.height);
+			return this.bmi;
+		}
+	};
+
+	const john = {
+		fullName : 'John Smith',
+		mass : 92,
+		height : 1.95,	
+		calcBMI : function(){
+			this.bmi =  this.mass / (this.height * this.height);
+			return this.bmi;
+		}
+	};
+	john.calcBMI();
+	mark.calcBMI();
+
+	if(john.bmi > mark.bmi){
+		console.log(`${john.fullName}'s BMI (${john.bmi}) is higher than ${mark.fullName}'s (${mark.calcBMI()})!`);
+	}
+	else{
+		console.log(`${mark.fullName}'s BMI (${mark.bmi}) is higher than ${john.fullName}'s (${john.calcBMI()})!`);
+	}
+*/
