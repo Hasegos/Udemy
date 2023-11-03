@@ -308,23 +308,111 @@
    */
 
    // #섹션 3 : 42번  객체 (key : value)
-// 키(key)과 값(value)으로 구성된 프로퍼티(property)들의 집합
-// property : 속성 (다른 값과 연결되어있을 때 사용)
+   /*
+		객체 : 키(key)과 값(value)으로 구성된 프로퍼티(property)들의 집합
+		property : 속성 (다른 값과 연결되어있을 때 사용)
+		{ 키 : 값 } 리터럴 구문
+		객체 vs 배열 : 위치로 참조하기때문에 배열에서는 순서가 중요하다 
+		             반면 객체는 키 자체 주소에서 가져오기에 상관없다		
+		
+		const jonas = {
+			fristName : 'Jonas',
+			lastName : 'Schmedtmann',
+			age : 2037 - 1991,
+			job : 'teacher',
+			friends : ['Michael','Peter', 'Steven']	
+		};
+   */
+
+   // #섹션 3 : 43번 Dot vs Bracket Notation(.  과  [] 차이)
+   /*
+   
+      .(Dot) : 1. 실제 최종 속성 이름을 말해야함.(계산된 속성 이름이 아니라.)
+		       2. 속성 이름을 먼저 계산하는 경우를 제외한 경우 사용
+			   3. 사용해서 실제 최종 속성 키 와 값 지정가능
+	   [] : 1. 속성 이름을 먼저 계산할 때 사용	        
+   
+	const jonas = {
+	
+		fristName : 'Jonas',
+		lastName : 'Schmedtmann',
+		age : 2037 - 1991,
+		job : 'teacher',
+		friends : ['Michael','Peter', 'Steven']	
+	};
+
+	console.log(jonas);
+	console.log(jonas.lastName);
+	console.log(jonas['lastName']);
+
+	const nameKey ='Name';
+	
+	
+	console.log(jonas['frist' + nameKey]);
+	console.log(jonas['last' + nameKey]);
+	
+	console.log(jonas.'last' + nameKey);
+	
+	   
+     밑 예제 경우는 interestedIn 이라는 실제 속성 값이 없기에 . 사용 불가능
+	 []를 사용해서 interestedIn 값으로 변환 시켜서 사용가능
+	 
+	const interestedIn = prompt(`What do you want to know about Jonas? 
+	Choos between fristName,lastName,age,job,and friends`);    
+
+	if(jonas[interestedIn]){
+	  console.log(jonas[interestedIn]);	
+	}
+	else{
+	  console.log(`Wrong request!  Choos between fristName,lastName,age,job,and friends`);
+	}
+
+	jonas.location = 'Portugal';
+	jonas['twitter'] = '@jonasschmedtman';
+	console.log(jonas);
+
+
+	       Challenge  도전 과제
+	   
+	"Jonas has 3 friends, and his best friend is called Michael"  <- 이거와 같이  콘솔 출력
+
+	console.log(`${jonas.fristName} has ${jonas.friends.length} friends, and his best friend is called  ${jonas.friends[0]}`);
+
+   */
+
+//  객체 속성에 함수를 사용할 수 있다. 다만, 식이아니라 표현으로 해야한다
+//  항상 객체 자체를 참조하는 걸 주로 하자 하드 코딩하지말고
+// 14분 59초
 const jonas = {
+	
 	fristName : 'Jonas',
 	lastName : 'Schmedtmann',
-	age : 2037 - 1991,
+	brithYear : 1991,
 	job : 'teacher',
-	friends : ['Michael','Peter', 'Steven']	
+	friends : ['Michael','Peter', 'Steven'],	
+	hasDriversLicense: true,
+	
+	// calcAge: function(birthYear){
+	// 	return 2037 - birthYear;
+	// }
+	
+	// calcAge: function(){
+	// 	// console.log(this);
+	// 	return 2037 - this.brithYear;
+	// }
+	
+	calcAge: function(){
+		this.age = 2037 - this.brithYear;
+		return this.age;
+	}
 };
 
-
-
-
-
-
-
-
+console.log(jonas.calcAge());
+// console.log(jonas['calcAge'](1991));
+console.log(jonas.age);
+console.log(jonas.age);
+console.log(jonas.age);
+console.log(jonas.age);
 
 
  // 코딩 챌린지
