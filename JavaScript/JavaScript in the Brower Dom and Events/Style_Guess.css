@@ -1,0 +1,55 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing : inherit;
+}
+
+html {
+	font-size: 62.5%;
+	box-sizing : border-box;
+}
+
+body {
+   	font-family : 'Press Start 2P', sans-serif;
+	color: #eee;
+	background-color: #222;
+}
+
+
+header{ 
+	/* relative : 원래 위치 기준으로 상대적으로 배치 */
+	position: relative; 
+	height: 35vh;
+	border-bottom: 7px solid #eee;
+}
+/*   align-items ,  justify-content   : 둘다  flex가 적용되어있을 때 사용*/
+/*   align-items : 수직축 방향으로 정렬 justify-content :  메인축 방향으로 정렬 */
+main {
+	height: 65vh;
+	color: #eee;
+	display: flex;
+	align-items: center;
+	/* space-around : 아이템들의 "둘레(around)"에 균일한 간격 만들어줌*/
+	justify-content: space-around;
+}
+
+.left{
+	width: 52rem;
+	display:flex;
+	/* flex-direction : 배치되는 축의 방향을 결정 column : ↓ */
+	flex-direction: column;
+	align-items: center;
+}
+.right {
+	width: 52rem;
+	font-size: 2rem;
+}
+
+
+h1 {
+	font-size: 4rem;
+	text-align: center;
+	/* absolute : 위치를 절대적으로 맞춘다.
+	주의 사항 : 상위 요소에서 배치기준 설정.만약 상위 (static 이 아닌)요소 없으면 최상위 요소 기준*/
+	position: absolute
+}
