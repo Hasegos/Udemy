@@ -431,22 +431,142 @@
 	 console.log(jonas.getSummary());
    */
 
-// console.log(`Lifting weights repetition 1`);
-// console.log(`Lifting weights repetition 2`);
-// console.log(`Lifting weights repetition 3`);
-// console.log(`Lifting weights repetition 4`);
-// console.log(`Lifting weights repetition 5`);
-// console.log(`Lifting weights repetition 6`);
-// console.log(`Lifting weights repetition 7`);
-// console.log(`Lifting weights repetition 8`);
-// console.log(`Lifting weights repetition 9`);
-// console.log(`Lifting weights repetition 10`);
+   // #섹션 3 : 46 ~ 47번 for(loop 반복)
+   /*
+    for() : 같은 걸 반복해서 적을 때 하드 코딩을 해야되는 번거러움을 없애 주기위해 사용한다
+	
+	구조 : for(초기값(단, const 제외 수를 계산해서 사용하기에) /  초기값의 범위   /  초기값 계산구문)
+	
+	1. 반복문을 사용하여 배열요소를 추가할 수 있다. 
+	
+	 continue vs break 
+	
+	continue : 해당 구문을 스킵하고 담을 넘어간다.
+	break : 해당 반복문 자체를 종료한다.
+	
+	console.log(`Lifting weights repetition 1`);
+	console.log(`Lifting weights repetition 2`);
+	console.log(`Lifting weights repetition 3`);
+	console.log(`Lifting weights repetition 4`);
+	console.log(`Lifting weights repetition 5`);
+	console.log(`Lifting weights repetition 6`);
+	console.log(`Lifting weights repetition 7`);
+	console.log(`Lifting weights repetition 8`);
+	console.log(`Lifting weights repetition 9`);
+	console.log(`Lifting weights repetition 10`);
 
-// for loop keeps running while condtion is TRUE
-for(let rep = 5; rep <= 10; rep++){
-	console.log(`Lifting weights repetition ${rep}`);
-}
+	 for loop keeps running while condtion is TRUE : 반복문은 참인 조건일 때 계속 반복
+	 
+	for(let rep = 5; rep <= 10; rep++){
+		console.log(`Lifting weights repetition ${rep}`);
+	}
 
+
+	const jonas = [
+		'Jonas',
+		'Schmedtmann',
+		2037 - 1991,
+		'teacher',
+		['Michael','Peter', 'Steven'],
+		true
+
+	];
+
+	const types = [];
+	console.log(jonas[0]);
+	console.log(jonas[1]);
+	...
+	console.log(jonas[4]);
+	jonas[5] does not exist
+
+     
+	for(let i = 0; i < jonas.length; i++){
+		Reading from jonas array
+		console.log(jonas[i],typeof jonas[i]);
+
+		 Filling types array
+		types[i] = typeof jonas[i];
+		types.push(typeof jonas[i]);
+	}
+	console.log(types);
+
+	const years = [1991, 2007, 1969, 2020];
+	const ages = [];
+
+	for(let i = 0; i < years.length; i++){
+		ages.push(2037 - years[i]);
+	}
+	console.log(ages);
+
+	continue and break
+	console.log('----ONLY STRINGS-----');
+	for(let i = 0; i < jonas.length; i++){	
+		if(typeof jonas[i] !== 'string') continue;
+		console.log(jonas[i],typeof jonas[i]);	
+	}
+
+	console.log('----BREAK WITH NUMBER-----');
+	for(let i = 0; i < jonas.length; i++){	
+		if(typeof jonas[i] === 'number') break;
+		console.log(jonas[i],typeof jonas[i]);	
+	}
+   */
+
+   // #섹션 3 : 48번 for( for()) / for() 거꾸로
+   /*
+    for () 구문 안에 조건을 바꾸면 거꾸로 나타낼 수 있다.
+	for( for() ): for() 구문 안에  for() 구문을 사용할 수 있다.
+
+	const jonas = [
+		'Jonas',
+		'Schmedtmann',
+		2037 - 1991,
+		'teacher',
+		['Michael','Peter', 'Steven']	
+	];
+
+	// 0, 1, .... 4
+	// 4, 3, .... 0
+
+	for(let i = jonas.length - 1; i >= 0; i--){
+		console.log(i,jonas[i]);
+	}
+
+	for(let exercise = 1; exercise < 4; exercise++){
+		console.log(`-------- Strating exercise ${exercise}`);
+
+		for(let rep = 1; rep < 6; rep++){
+			console.log(`Exercise ${exercise}: Lifting weight repetition ${rep}`);
+		}	
+	}
+   */
+
+   // #섹션 3 : 49번 while()
+   /*
+     while() : 몇번을 돌려야할지 알 수 없을때 사용함.
+	 
+	 구문 : while(조건){ } 
+
+	for(let rep = 1; rep < 6; rep++){
+		console.log(`Lifting weight repetition ${rep}`);
+	}	
+
+	let rep = 1;
+	while(rep <= 10){
+		console.log(`WHILE : Lifting weight repetition ${rep}`);	
+		rep++;
+	}
+	
+	
+	let dice = Math.trunc(Math.random() * 6 )+ 1;
+	while(dice !== 6){
+
+		console.log(`You rolled a ${dice}`);
+		dice = Math.trunc(Math.random() * 6 )+ 1;
+
+		if(dice === 6) console.log(`Loop is about to end....`);
+	}
+   */
 
 
 
@@ -593,4 +713,38 @@ for(let rep = 5; rep <= 10; rep++){
 	else{
 		console.log(`${mark.fullName}'s BMI (${mark.bmi}) is higher than ${john.fullName}'s (${john.calcBMI()})!`);
 	}
+*/
+
+
+ // No.4 Challenge   통과~~~~~~~
+
+/*
+	const calcTip = function(bill){
+		return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+	}
+
+	const bills = [22,295,176,440,37,105,10,1100,86,62];
+	const tips = [];
+	const totals = [];
+
+
+
+	for(let i = 0; i < bills.length; i++){
+		const tip = calcTip(bills[i]);
+		tips.push(tip);
+		totals.push(tip+bills[i]);
+	}
+	console.log(tips,total);
+	
+
+	// 제네릭 함수 : 타입을 외부에서 지정해준것으로 일반화 시켜준다.
+	const calcAverage = function(arr){
+		let sum = 0;	
+		for(let i = 0; i < arr.length; i++){	
+			sum += arr[i];
+		}
+		return  sum / arr.length;
+	}
+
+	console.log(calcAverage(totals));
 */
